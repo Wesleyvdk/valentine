@@ -1,0 +1,64 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffe6e6;
+  padding: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.yesButton,
+.noButton {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.yesButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.yesButton:hover {
+  background-color: #45a049;
+}
+
+.noButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.noButton:hover {
+  background-color: #da190b;
+}
+
+.confirmation {
+  margin-top: 2rem;
+  text-align: center;
+  color: #4caf50;
+}
+
+.confirmation h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation p {
+  font-size: 1rem;
+}
+
