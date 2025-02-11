@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Envelope from "./components/Envelope"
-import styles from "./page.module.css"
+import { useState } from "react";
+import Envelope from "./components/Envelope";
+import styles from "./page.module.css";
 
 export default function ValentinesProposal() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [noCount, setNoCount] = useState(0)
-  const [submitted, setSubmitted] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [noCount, setNoCount] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleEnvelopeClick = () => {
-    setIsOpen(true)
-  }
+    setIsOpen(true);
+  };
 
   const handleNoClick = () => {
-    setNoCount(noCount + 1)
-  }
+    setNoCount(noCount + 1);
+  };
 
   const submitReply = async (answer: string) => {
     try {
@@ -25,17 +25,17 @@ export default function ValentinesProposal() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ answer }),
-      })
-      const data = await response.json()
+      });
+      const data = await response.json();
       if (data.success) {
-        setSubmitted(true)
+        setSubmitted(true);
       } else {
-        console.error("Failed to submit reply")
+        console.error("Failed to submit reply");
       }
     } catch (error) {
-      console.error("Error submitting reply:", error)
+      console.error("Error submitting reply:", error);
     }
-  }
+  };
 
   return (
     <main className={styles.main}>
@@ -56,9 +56,9 @@ export default function ValentinesProposal() {
           <button
             className={styles.noButton}
             onClick={() => {
-              handleNoClick()
+              handleNoClick();
               if (noCount >= 5) {
-                submitReply("No")
+                submitReply("No");
               }
             }}
             style={{ width: `${100 - noCount * 5}px` }}
@@ -70,10 +70,8 @@ export default function ValentinesProposal() {
       {submitted && (
         <div className={styles.confirmation}>
           <h2>Thank you for your reply!</h2>
-          <p>Your answer has been recorded.</p>
         </div>
       )}
     </main>
-  )
+  );
 }
-

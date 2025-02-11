@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import styles from "./Envelope.module.css"
+import { motion } from "framer-motion";
+import styles from "./Envelope.module.css";
 
 interface EnvelopeProps {
-  isOpen: boolean
-  onClick: () => void
+  isOpen: boolean;
+  onClick: () => void;
 }
 
 export default function Envelope({ isOpen, onClick }: EnvelopeProps) {
@@ -19,13 +19,16 @@ export default function Envelope({ isOpen, onClick }: EnvelopeProps) {
             ? {
                 y: [-160, -140, -160],
                 zIndex: 3,
-                transition: { y: { repeat: Number.POSITIVE_INFINITY, duration: 2 }, zIndex: { delay: 0.5 } },
+                transition: {
+                  y: { repeat: Number.POSITIVE_INFINITY, duration: 2 },
+                  zIndex: { delay: 0.5 },
+                },
               }
             : { y: 0, zIndex: 1 }
         }
       >
         <div className={styles.letterContent}>
-          <span className={styles.letterEmoji}>❤️</span>
+          <span className={styles.letterEmoji}>❤️Linnea</span>
           <h1 className={styles.letterText}>Will you be my Valentine?</h1>
         </div>
       </motion.div>
@@ -39,6 +42,5 @@ export default function Envelope({ isOpen, onClick }: EnvelopeProps) {
         <div className={styles.body} />
       </div>
     </div>
-  )
+  );
 }
-
