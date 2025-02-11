@@ -6,6 +6,8 @@
   min-height: 100vh;
   background-color: #ffe6e6;
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .buttons {
@@ -61,4 +63,3 @@
 .confirmation p {
   font-size: 1rem;
 }
-

@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Envelope from "./components/Envelope";
+import { Hearts } from "./components/Hearts";
 import styles from "./page.module.css";
 
 export default function ValentinesProposal() {
   const [isOpen, setIsOpen] = useState(false);
   const [noCount, setNoCount] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [showHearts, setShowHearts] = useState(false);
 
   const handleEnvelopeClick = () => {
     setIsOpen(true);
@@ -29,6 +31,9 @@ export default function ValentinesProposal() {
       const data = await response.json();
       if (data.success) {
         setSubmitted(true);
+        if (answer === "Yes") {
+          setShowHearts(true);
+        }
       } else {
         console.error("Failed to submit reply");
       }
@@ -39,6 +44,7 @@ export default function ValentinesProposal() {
 
   return (
     <main className={styles.main}>
+      {showHearts && <Hearts />}
       <Envelope isOpen={isOpen} onClick={handleEnvelopeClick} />
       {isOpen && !submitted && (
         <div className={styles.buttons}>
@@ -66,7 +72,7 @@ export default function ValentinesProposal() {
       )}
       {submitted && (
         <div className={styles.confirmation}>
-          <h2>Thank you for your reply!</h2>
+          <h2>omg I love you so much!</h2>
         </div>
       )}
     </main>
