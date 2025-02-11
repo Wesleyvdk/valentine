@@ -57,11 +57,8 @@ export default function ValentinesProposal() {
             className={styles.noButton}
             onClick={() => {
               handleNoClick();
-              if (noCount >= 5) {
-                submitReply("No");
-              }
             }}
-            style={{ width: `${100 - noCount * 5}px` }}
+            style={{ width: `${100 - noCount * 5}px`, maxHeight: `40px` }}
           >
             No
           </button>
