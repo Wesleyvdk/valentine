@@ -55,6 +55,7 @@
 
 .letterEmoji {
   font-size: 3rem;
+  color: #ff4d4d;
 }
 
 .letterText {
@@ -73,4 +74,3 @@
     font-size: 1.2rem;
   }
 }
-
